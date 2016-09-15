@@ -10,17 +10,74 @@
     <script src='/vendor.js'></script>
     <script src='/app.js'></script>
     <style type="text/css" media="all">
-      body { margin-top: 30px; }
+      body { margin-top: 48px; }
+      .templates { display: none; }
+      .inline-list {
+        margin-bottom: 0px;
+      }
+      .inline-list li {
+        display: inline;
+        margin: 0 20px 0 0;
+      }
+      .fixed-top {
+        position: fixed;
+        top: 0px;
+        z-index: 1024;
+      }
+      .no-select {
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+      }
+      .hover-links a { text-decoration: none; }
+      .hover-links a:hover { text-decoration: underline; }
+      .nav-container {
+        padding-left: 40px;
+        background: #666;
+      }
+      .nav-container a {
+        color: white;
+      }
+      .text-lg {
+        font-size: 32px;
+      }
     </style>
   </head>
   <body>
     <div class='markup'>
-      <div class='view-container container'>
+      <div class='nav-container no-select fixed-top u-full-width'>
+        <ul class='inline-list hover-links nav-list six columns'>
+          <li><a class='text-lg' href='#'>LearnJS</a></li>
+          <li><a href="#problem-1">Start</a></li>
+        </ul>
+      </div>
+      <div class='view-container container'>  
+      </div>
+      <div class='templates'>
+        <div class='skip-btn'>
+          <a>Skip This Problem</a>
+        </div>
+        <div class='problem-view'>
+          <h3 class='title'></h3>
+          <p data-name='description'></p>
+          <pre><code data-name='code'></code></pre>
+          <form>
+            <textarea class='u-full-width answer'></textarea>
+            <div>
+              <button class='button-primary check-btn'>Check Answer</button>
+              <p class='result'></p>
+            </div>
+          </form>
+        </div>
+        <div class='correct-flash'>
+          <span>Correct!</span> <a>Next Problem</a>
+        </div>
         <div class='landing-view'>
           <div class='row'>
             <div class='one-half column'>
               <h3>Learn Javascript, one puzzle at a time.</h3>
-              <a href='' class='button button-primary'>Start Now!</a>
+              <a href='#problem-1' class='button button-primary'>Start Now!</a>
             </div>
             <div class='one-half colum'>
               <img src="/images/HeroImage.jpg" />
@@ -29,5 +86,16 @@
         </div>
       </div>
     </div>
+
+    <script type='text/javascript'>
+      function ready(fn) {
+        if (document.readyState != 'loading') {
+          fn();
+        } else {
+          document.addEventListener('DOMContentLoaded', fn);
+        }
+      }
+      ready( learnjs.appOnReady );
+    </script>
   </body>
 </html>
