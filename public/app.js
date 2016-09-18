@@ -87,8 +87,10 @@ learnjs.showView = function(hash) {
 
 
 	if (viewFn) {
-		learnjs.triggerEvent('removingView', []);
-		$('.view-container').empty().append(viewFn(hashParts[1]));
+		learnjs.triggerEvent('removingView', []); //any existing views receive this message
+		$('.view-container').empty().append(viewFn(hashParts[1])); //then render the view
+		// in this case, on the problemView has bound and event listener to remove the skip
+		// button.
 	}
 	
 }
