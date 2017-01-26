@@ -1,0 +1,27 @@
+{
+    "Table": {
+        "TableArn": "arn:aws:dynamodb:us-east-1:657107409693:table/auth", 
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "userId", 
+                "AttributeType": "S"
+            }
+        ], 
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0, 
+            "WriteCapacityUnits": 5, 
+            "ReadCapacityUnits": 5
+        }, 
+        "TableSizeBytes": 0, 
+        "TableName": "auth", 
+        "TableStatus": "ACTIVE", 
+        "KeySchema": [
+            {
+                "KeyType": "HASH", 
+                "AttributeName": "userId"
+            }
+        ], 
+        "ItemCount": 0, 
+        "CreationDateTime": 1474467339.535
+    }
+}

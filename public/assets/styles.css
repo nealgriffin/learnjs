@@ -1,0 +1,175 @@
+body {
+
+}
+.templates { display: none; }
+.inline-list {
+  margin-bottom: 0px;
+}
+.inline-list li {
+  display: inline;
+  margin: 0 20px 0 0;
+}
+.fixed-top {
+  position: fixed;
+  top: 0px;
+  z-index: 1024;
+}
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+.hover-links a { text-decoration: none; }
+.hover-links a:hover { text-decoration: underline; }
+.nav-container {
+  padding-left: 40px;
+  background: #666;
+}
+.nav-container a {
+  color: white;
+}
+.text-lg {
+  font-size: 32px;
+}
+.navbar-padding {
+  padding-top: 7px;
+  display: inline-block;
+}
+.wrapper {
+  max-width: 1008px;
+  margin: 0 auto;
+}
+/* HEADER STYLES */
+nav ul {
+  list-style: none;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.globalHeader {
+  background: #eaeff2;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  z-index: 5000;
+  -ms-transition: transform 0.4s ease-in-out;
+  -webkit-transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+}
+
+.globalHeader > .wrapper {
+  width: 88%;
+  display: table;
+  margin: 0 auto;
+}
+
+.globalHeader > .wrapper > * {
+  display: table-cell;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo a {
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-size: cover;
+  background-image: url('/assets/cubscout.gif');
+  text-indent: -2000px;
+}
+
+.banner {
+  font-size: 2em;
+  color: #1eaedb;
+}
+.displayNav li > * {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+
+}
+.displayNav li + li {
+  margin-left: 24px;
+}
+
+.displayNav {
+  float: right;
+  -ms-transition: transform 0.4s ease-in-out;
+  -webkit-transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+
+}
+.displayNav > * {
+  display: inline-block;
+}
+
+.displayNav li > * {
+  position: relative;
+  top: 36px;
+  right: 0px;
+}
+
+.js-toggleMenu {
+  -ms-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.menuIsOpen .displayNav {
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  -transition: translateX(-240px);
+}
+.menuSidebar {
+  width: 240px;
+  position: fixed;
+  right: -240px;
+  height: 100%;
+  background: #97ca5b;
+  top: 0;
+  box-sizing: border-box;
+  -ms-transition: right 0.4s ease-in-out;
+  -webkit-transition: right 0.4s ease-in-out;
+  transition: right 0.4s ease-in-out;
+}
+
+.menuSidebar.isOpen {
+  right: 0;
+}
+
+.globalNav-menu {
+  padding: 18px;
+}
+
+.globalNav-menu a {
+  display: block;
+  padding: 12px 24px;
+  text-align: right;
+  color: #fdf9ef;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

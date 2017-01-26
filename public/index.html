@@ -8,61 +8,40 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
     <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
     <script src='/vendor.js'></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
     <script src='/app.js'></script>
-    <style type="text/css" media="all">
-      body { margin-top: 48px; }
-      .templates { display: none; }
-      .inline-list {
-        margin-bottom: 0px;
-      }
-      .inline-list li {
-        display: inline;
-        margin: 0 20px 0 0;
-      }
-      .fixed-top {
-        position: fixed;
-        top: 0px;
-        z-index: 1024;
-      }
-      .no-select {
-        user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-      }
-      .hover-links a { text-decoration: none; }
-      .hover-links a:hover { text-decoration: underline; }
-      .nav-container {
-        padding-left: 40px;
-        background: #666;
-      }
-      .nav-container a {
-        color: white;
-      }
-      .text-lg {
-        font-size: 32px;
-      }
-      .navbar-padding {
-        padding-top: 7px;
-        display: inline-block;
-      }
-    </style>
+    <link rel='stylesheet' href='./assets/styles.css' />
+
     <meta name="google-signin-client_id" content="813677618743-4op0heu6pa1kn6opcnblvgjofpufukg0.apps.googleusercontent.com" />
   </head>
   <body>
-    <div class='markup'>
-      <div class='nav-container no-select fixed-top u-full-width'>
-        <ul class='inline-list hover-links nav-list six columns'>
-          <li><a class='text-lg' href='#'>LearnJS</a></li>
-          <li><a href="#problem-1">Start</a></li>
+    <header class='globalHeader'>
+      <div class='wrapper'>
+        <h1 class='logo'>
+          <a href="http://localhost:9292">Pack 55 Basking Ridge, NJ</a>
+        </h1>
+        <h1 class='banner'>
+          Pack 55 Basking Ridge, NJ
+        </h1>
+
+        <ul class='displayNav'>
+          <li><a href='#'>Menu #1</a></li>
+          <li><a href='#'>Menu #2</a></li>
+          <li><a href='#' class='js-toggleMenu'>Menu #3</a></li>
         </ul>
-        <div class='four columns signin-bar'>
-          <span class='navbar-padding u-pull-right'>
-            <span class="g-signin2" data-onsuccess="googleSignIn"></span>
-          </span>
+        <div class='menuSidebar'>
+          <ul class='globalNav-menu'>
+            <li><a href='#'>Sub menu 1</a></li>
+            <li><a href='#'>Sub Menu 2</a></li>
+            <li><a href='#'>Sub Menu 3</a></li>
+            <li><a href='#'>Sub Menu 4</a></li>
+          </ul>
         </div>
+
       </div>
+    </header>
+
+    <div class='markup'>
       <div class='view-container container'>  
       </div>
       <div class='templates'>
@@ -85,6 +64,7 @@
             <div>
               <button class='button-primary check-btn'>Check Answer</button>
               <p class='result'></p>
+              <p class='dinosaur'></p>
             </div>
           </form>
         </div>
@@ -102,7 +82,43 @@
             </div>
           </div>
         </div>
+        <div class='registrations-view'>
+          <p>First Paragraph</p>
+          <p>Second paragraph</p>
+          <form>
+            <div class='row'>
+              <input id='family' placeholder='Family last name'>
+            </div>
+            <div class='row'>
+              <input id='email' placeholder='enter email'>
+            </div>
+            <div class='row'>
+              <input id='children' placeholder='No. children'>
+            </div>
+            <div class='row'>
+              <input id='adults' placeholder='No. adults'>
+            </div>
+            <input type='hidden' id='event_id'>
+            <button class='button-primary submit-btn'>Submit</button>
+          </form>
+
+        </div>
+        <div class='subscription-content'>
+          <h1>Subscription Content</h1>
+          <h1>Subscription content #2</h1>
+          <div id='specific-content'></div>
+
+        </div>
       </div>
+    </div>
+    <div class='four columns signin-bar'>
+      <span class='navbar-padding u-pull-right'>
+        <span class="g-signin2" data-onsuccess="googleSignIn"></span>
+        <button onclick="signOut();">Sign out</button>
+
+  
+
+      </span>
     </div>
 
     <script type='text/javascript'>
@@ -113,7 +129,16 @@
           document.addEventListener('DOMContentLoaded', fn);
         }
       }
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+        learnjs.signout();
+        
+      };
       ready( learnjs.appOnReady );
+
     </script>
   </body>
 </html>
